@@ -4,10 +4,7 @@ class Solution(object):
         hashmap = dict()
         for n1 in nums1:
             for n2 in nums2:
-                if n1 + n2 in hashmap:
-                    hashmap[n1 + n2] += 1
-                else:
-                    hashmap[n1 + n2] = 1
+                hashmap[n1+n2] = hashmap.get(n1+n2, 0) + 1 #方括号 [] 用于字典的键访问和赋值操作
 
         # 如果 -(n1+n2) 存在于nums3和nums4, 存入结果
         count = 0
